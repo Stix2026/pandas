@@ -22,15 +22,16 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
-// Contact form placeholder handling.
+// Contact / signup form placeholder handling.
 // Replace this with a real submit (e.g. to Formspree, Netlify Forms, etc.)
 // since GitHub Pages only serves static files and can't process form posts.
-const form = document.getElementById("contact-form");
-const status = document.getElementById("form-status");
-
-if (form && status) {
+const forms = document.querySelectorAll("form");
+forms.forEach((form) => {
+  const status = form.querySelector(".form-status");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    status.textContent = "Form isn't connected yet — see README.";
+    if (status) {
+      status.textContent = "Form isn't connected yet — see README.";
+    }
   });
-}
+});

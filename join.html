@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Join a Support Group — Stix Paediatric Practice</title>
+<meta name="description" content="Connect with other families navigating PANS and PANDAS — our practice's parent group, plus national community and clinician resources." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" fill="#ffc93c"/>
+        <path d="M24 12c1.2 3 3 4.6 6 5.6-3 1-4.8 2.8-6 5.8-1.2-3-3-4.8-6-5.8 3-1 4.8-2.6 6-5.6Z" fill="#ff6f59"/>
+        <circle cx="15" cy="30" r="3.2" fill="#3fb6e8"/>
+        <circle cx="33" cy="30" r="3.2" fill="#57c785"/>
+      </svg>
+      <span>
+        Stix
+        <span class="brand-sub">Paediatric Practice</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+
+    <nav class="primary-nav" id="primary-nav">
+      <ul>
+        <li><a href="index.html">What is PANS/PANDAS?</a></li>
+        <li><a href="physiology.html">Physiology &amp; Management</a></li>
+        <li><a href="join.html" class="active">Join a Group</a></li>
+        <li><a href="#group-form" class="nav-cta nav-cta-mobile">Sign up</a></li>
+      </ul>
+    </nav>
+
+    <a href="#group-form" class="nav-cta desktop-cta">Sign up</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="small-label">Community</span>
+      <h1>You don't have to figure this out alone</h1>
+      <p class="lede">
+        A sudden PANS or PANDAS diagnosis can be isolating — for kids and for the
+        adults caring for them. Connecting with other families who understand
+        what a flare actually looks like, day to day, helps.
+      </p>
+    </div>
+  </section>
+
+  <!-- COMMUNITY OPTIONS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="small-label">Ways to connect</span>
+        <h2>Groups and resources</h2>
+      </div>
+      <div class="community-grid">
+        <article class="community-card">
+          <h3>Our practice's parent group</h3>
+          <p>A small, informal meetup (in person and virtual options) for families we work with, to trade notes and support each other between appointments. Sign up below.</p>
+          <a href="#group-form" class="card-link">Sign up below →</a>
+        </article>
+        <article class="community-card">
+          <h3>PANDAS Network online forum</h3>
+          <p>A national online community for parents and caregivers to ask questions and share experiences, hosted on Inspire.</p>
+          <a href="https://www.inspire.com/groups/pandas/" class="card-link" target="_blank" rel="noopener">Visit the forum →</a>
+        </article>
+        <article class="community-card">
+          <h3>PANDAS Physicians Network</h3>
+          <p>Clinician directories, research updates, and family resources from a network of physicians focused on PANS/PANDAS care.</p>
+          <a href="https://www.pandasppn.org/" class="card-link" target="_blank" rel="noopener">Visit PPN →</a>
+        </article>
+        <article class="community-card">
+          <h3>International OCD Foundation</h3>
+          <p>Helpful if your provider is unfamiliar with PANS/PANDAS — includes a searchable directory to help find a knowledgeable clinician.</p>
+          <a href="https://www.iocdf.org/find-help" class="card-link" target="_blank" rel="noopener">Find help →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGN UP FORM -->
+  <section class="group-form-section" id="group-form">
+    <div class="wrap group-form-wrap">
+      <div>
+        <span class="small-label">Get in touch</span>
+        <h2>Join our parent group</h2>
+        <p class="measure" style="margin-top:16px;">
+          Meetups are casual and low-pressure — some families come to every one,
+          some drop in occasionally. Sign up and we'll send details for the next
+          session.
+        </p>
+        <p class="measure" style="font-size:0.9rem;">
+          This is a peer support space, not a substitute for your child's
+          individual medical care.
+        </p>
+      </div>
+
+      <form class="contact-form" id="group-signup-form">
+        <div class="field">
+          <label for="parent-name">Your name</label>
+          <input type="text" id="parent-name" name="parent-name" required />
+        </div>
+        <div class="field">
+          <label for="parent-email">Email</label>
+          <input type="email" id="parent-email" name="parent-email" required />
+        </div>
+        <div class="field">
+          <label for="child-age">Child's age</label>
+          <input type="text" id="child-age" name="child-age" />
+        </div>
+        <div class="field">
+          <label for="format">Preferred format</label>
+          <select id="format" name="format">
+            <option>In person</option>
+            <option>Virtual</option>
+            <option>Either works</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Anything you'd like us to know</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <div class="submit-row">
+          <button type="submit">Sign me up</button>
+          <span class="form-status" id="form-status" role="status"></span>
+        </div>
+        <p class="form-note">
+          This form doesn't send anywhere yet — see the README for how to connect
+          it to a form service (e.g. Formspree), since GitHub Pages can't run
+          server-side code.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section class="section" id="sources">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="small-label">Where these come from</span>
+        <h2>Sources &amp; further reading</h2>
+      </div>
+      <ul class="sources-list">
+        <li>
+          <a href="https://pandasnetwork.org/research/" target="_blank" rel="noopener">PANDAS Network</a>
+          <span class="src-meta">Community forum, clinician directory, research updates, and family resources</span>
+        </li>
+        <li>
+          <a href="https://autism.org/webinar/pans-pandas-research-updates/" target="_blank" rel="noopener">PANS/PANDAS Research Updates (webinar)</a>
+          <span class="src-meta">autism.org</span>
+        </li>
+        <li>
+          <a href="https://www.nimh.nih.gov/health/publications/pandas" target="_blank" rel="noopener">PANS and PANDAS: Questions and Answers</a>
+          <span class="src-meta">National Institute of Mental Health (NIMH) — includes guidance on finding a knowledgeable provider</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="year"></span> Stix: Paediatric Practice — Dr. Pieter Fourie. Not a substitute for individualized medical advice.</p>
+    <p><a href="https://www.stix.co.za/contact-us" target="_blank" rel="noopener">Contact us</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
