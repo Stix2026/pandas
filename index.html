@@ -1,223 +1,169 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>What Are PANS and PANDAS? — Stix Paediatric Practice</title>
-<meta name="description" content="A clear, evidence-based overview of PANS and PANDAS: what they are, how they differ, and what the symptoms look like in children." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PANS & PANDAS — Parent Information</title>
+<style>
+:root{
+  --ink:#17324d;
+  --muted:#617487;
+  --bg:#f6f8f7;
+  --surface:#ffffff;
+  --soft:#eaf4f1;
+  --soft2:#f1ecf8;
+  --accent:#3b7d78;
+  --accent2:#725b92;
+  --border:#dbe4e5;
+  --warning:#fff5df;
+  --shadow:0 16px 42px rgba(23,50,77,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+#app{min-height:100vh;background:var(--bg)}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav{max-width:1160px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.logo{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,#3b7d78,#725b92);display:grid;place-items:center;color:#fff;font-size:20px;box-shadow:0 8px 18px rgba(59,125,120,.22)}
+.navlinks{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.navlinks button{border:0;background:transparent;padding:9px 12px;border-radius:10px;color:var(--muted);font-weight:700;cursor:pointer}.navlinks button.active,.navlinks button:hover{background:var(--soft);color:var(--ink)}
+main{max-width:1160px;margin:auto;padding:48px 22px 70px}.page{display:none}.page.active{display:block}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:center;padding:34px 0 48px}.eyebrow{font-size:.82rem;text-transform:uppercase;letter-spacing:.13em;font-weight:800;color:var(--accent);margin-bottom:12px}.hero h1{font-size:clamp(2.6rem,6vw,5rem);line-height:1.02;letter-spacing:-.055em;margin:0 0 20px}.hero p{font-size:1.14rem;color:var(--muted);max-width:680px}.hero-art{min-height:340px;border-radius:34px;background:linear-gradient(145deg,#e8f3f0,#f1ebf7);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.orb{position:absolute;border-radius:50%;filter:blur(.2px)}.orb.a{width:220px;height:220px;background:#b9ddd6;left:-45px;top:35px}.orb.b{width:180px;height:180px;background:#d5c8e5;right:-35px;bottom:25px}.brain{position:absolute;inset:55px;display:grid;place-items:center;font-size:100px}.pulse{position:absolute;left:50%;top:50%;width:220px;height:220px;transform:translate(-50%,-50%);border:2px solid rgba(59,125,120,.32);border-radius:50%}
+.badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.badge{padding:7px 11px;background:#fff;border:1px solid var(--border);border-radius:999px;font-size:.86rem;font-weight:700;color:#476174}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:23px;box-shadow:0 8px 26px rgba(23,50,77,.045)}.card h3{margin:0 0 8px;font-size:1.15rem}.card p{margin:0;color:var(--muted)}
+.section{margin-top:58px}.section h2{font-size:2rem;letter-spacing:-.035em;margin:0 0 9px}.lead{color:var(--muted);max-width:800px}.callout{margin:22px 0;padding:20px 22px;border-left:4px solid var(--accent);background:var(--soft);border-radius:0 16px 16px 0}.callout.warning{border-left-color:#c58a2b;background:var(--warning)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}.checklist{padding:0;margin:13px 0 0;list-style:none}.checklist li{position:relative;padding:8px 0 8px 28px;border-bottom:1px solid #edf1f1}.checklist li:last-child{border-bottom:0}.checklist li:before{content:"✓";position:absolute;left:0;top:8px;width:20px;height:20px;border-radius:50%;background:var(--soft);color:var(--accent);font-weight:900;text-align:center;line-height:20px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}.step{padding:17px;border:1px solid var(--border);border-radius:16px;background:#fff}.num{font-weight:900;color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em}.step h4{margin:5px 0}.step p{margin:0;color:var(--muted);font-size:.92rem}
+.mechanism{display:grid;grid-template-columns:1fr 1fr;gap:18px}.mech{border:1px solid var(--border);border-radius:18px;padding:20px;background:#fff}.mech strong{display:block;margin-bottom:5px}.status{display:inline-block;margin-bottom:9px;padding:4px 8px;border-radius:999px;font-size:.73rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;background:#e8f3f0;color:#286b65}.status.proposed{background:#eee9f5;color:#684e88}
+.timeline{position:relative;margin-top:20px;padding-left:28px}.timeline:before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:#cfe0de}.titem{position:relative;padding:0 0 25px 18px}.titem:before{content:"";position:absolute;left:-28px;top:6px;width:14px;height:14px;background:var(--accent);border-radius:50%;border:4px solid var(--bg)}.titem h4{margin:0 0 4px}.titem p{margin:0;color:var(--muted)}
+.sources{display:grid;grid-template-columns:1fr 1fr;gap:12px}.source{display:flex;gap:12px;align-items:flex-start;padding:15px;background:#fff;border:1px solid var(--border);border-radius:15px}.source .icon{font-size:20px}.source p{margin:0;font-size:.9rem;color:var(--muted)}.source b{display:block;color:var(--ink);margin-bottom:3px}
+.join{display:grid;grid-template-columns:1fr .9fr;gap:28px;align-items:start}.joinbox{background:linear-gradient(145deg,#e8f3f0,#f1ebf7);border-radius:28px;padding:28px;box-shadow:var(--shadow)}label{display:block;font-weight:700;font-size:.9rem;margin:14px 0 6px}input,select,textarea{width:100%;padding:12px 13px;border:1px solid #cddadb;border-radius:11px;background:#fff;font:inherit;color:var(--ink)}textarea{min-height:110px;resize:vertical}.button{margin-top:17px;border:0;border-radius:12px;padding:12px 17px;background:var(--ink);color:#fff;font-weight:800;cursor:pointer}.button:hover{opacity:.9}.consent{font-size:.8rem;color:var(--muted);margin-top:12px}.success{display:none;margin-top:15px;padding:13px 15px;background:#e7f4ed;border:1px solid #bfe0ce;border-radius:12px;color:#2c6745;font-weight:700}
+footer{border-top:1px solid var(--border);padding:25px 22px 50px;color:var(--muted);font-size:.82rem}.footerin{max-width:1160px;margin:auto}.footerin p{max-width:850px}
+@media(max-width:850px){.hero,.join,.two,.mechanism{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.sources{grid-template-columns:1fr}.hero-art{min-height:260px}.nav{align-items:flex-start;flex-direction:column}.navlinks{justify-content:flex-start}}
+@media(max-width:520px){main{padding:30px 16px 55px}.flow{grid-template-columns:1fr}.nav{padding:12px 16px}.hero h1{font-size:2.7rem}}
+</style>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="wrap">
-    <a href="index.html" class="brand">
-      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="24" cy="24" r="22" fill="#ffc93c"/>
-        <path d="M24 12c1.2 3 3 4.6 6 5.6-3 1-4.8 2.8-6 5.8-1.2-3-3-4.8-6-5.8 3-1 4.8-2.6 6-5.6Z" fill="#ff6f59"/>
-        <circle cx="15" cy="30" r="3.2" fill="#3fb6e8"/>
-        <circle cx="33" cy="30" r="3.2" fill="#57c785"/>
-      </svg>
-      <span>
-        Stix
-        <span class="brand-sub">Paediatric Practice</span>
-      </span>
-    </a>
-
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-    </button>
-
-    <nav class="primary-nav" id="primary-nav">
-      <ul>
-        <li><a href="index.html" class="active">What is PANS/PANDAS?</a></li>
-        <li><a href="physiology.html">Physiology &amp; Management</a></li>
-        <li><a href="join.html">Join a Group</a></li>
-        <li><a href="join.html" class="nav-cta nav-cta-mobile">Join a group</a></li>
-      </ul>
-    </nav>
-
-    <a href="join.html" class="nav-cta desktop-cta">Join a group</a>
+<div id="app">
+<header><nav class="nav" aria-label="Main navigation">
+  <div class="brand"><div class="logo">✦</div><span>PANS &amp; PANDAS<br><small style="font-weight:600;color:#718392">Parent Information</small></span></div>
+  <div class="navlinks">
+    <button data-page="home">What is it?</button>
+    <button data-page="physiology">Physiology &amp; Management</button>
+    <button data-page="group">Join the Group</button>
   </div>
-</header>
-
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <div class="hero-copy">
-        <span class="small-label">Family &amp; clinician resource</span>
-        <h1>Understanding PANS and PANDAS</h1>
-        <p class="lede">
-          A plain-language, evidence-based introduction to two conditions that
-          cause sudden, dramatic changes in a child's behavior — what they are,
-          how they're diagnosed, and where the science is still catching up.
-        </p>
-        <div class="hero-actions">
-          <a href="physiology.html" class="btn-primary">Physiology &amp; management</a>
-          <a href="join.html" class="btn-ghost">Find a support group</a>
-        </div>
-      </div>
-      <div class="hero-figure">
-        <svg viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="180" cy="180" r="150" fill="#eaf7fd"/>
-          <path d="M180 66c34 14 60 18 80 18v78c0 62-38 104-80 128-42-24-80-66-80-128V84c20 0 46-4 80-18Z" fill="#3fb6e8"/>
-          <circle cx="150" cy="176" r="10" fill="#2e2a4a"/>
-          <circle cx="210" cy="176" r="10" fill="#2e2a4a"/>
-          <path d="M148 212c10 14 54 14 64 0" stroke="#2e2a4a" stroke-width="6" stroke-linecap="round"/>
-          <path d="M180 240l0 -46M158 217h44" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
-          <circle cx="82" cy="96" r="10" fill="#ffc93c"/>
-          <circle cx="290" cy="120" r="7" fill="#ff6f59"/>
-          <circle cx="270" cy="70" r="5" fill="#57c785"/>
-          <circle cx="70" cy="230" r="6" fill="#9b8cf2"/>
-        </svg>
-      </div>
+</nav></header>
+<main>
+<section id="home" class="page active">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">A parent-friendly evidence guide</div>
+      <h1>When a child's symptoms change <em>suddenly</em>.</h1>
+      <p>PANS and PANDAS describe patterns of abrupt-onset neuropsychiatric symptoms in children. This site explains what the terms mean, what is known and still uncertain, and how families can work with healthcare professionals.</p>
+      <div class="badges"><span class="badge">PANS = broader syndrome</span><span class="badge">PANDAS = strep-associated subtype</span><span class="badge">Information, not diagnosis</span></div>
     </div>
-  </section>
+    <div class="hero-art" aria-hidden="true"><div class="orb a"></div><div class="orb b"></div><div class="pulse"></div><div class="brain">🧠</div></div>
+  </div>
 
-  <!-- WHAT ARE THEY -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="small-label">The basics</span>
-        <h2>What are PANS and PANDAS?</h2>
-      </div>
-      <div class="measure">
-        <p>
-          <strong>PANS</strong> (Pediatric Acute-onset Neuropsychiatric Syndrome) and
-          <strong>PANDAS</strong> (Pediatric Autoimmune Neuropsychiatric Disorders
-          Associated with Streptococcal infections) describe a sudden, severe onset
-          of obsessive-compulsive disorder (OCD) or a severe eating restriction in a
-          child, usually along with other abrupt changes in mood, behavior, or motor
-          function.
-        </p>
-        <p>
-          <strong>PANDAS is a subtype of PANS</strong> that is specifically linked to
-          a strep (streptococcal) infection, such as strep throat or scarlet fever.
-          PANS is the broader category and may follow other infections, immune
-          triggers, or environmental factors — not just strep.
-        </p>
-      </div>
+  <div class="section"><h2>What are PANS and PANDAS?</h2><p class="lead">PANS stands for <b>Pediatric Acute-Onset Neuropsychiatric Syndrome</b>. PANDAS stands for <b>Pediatric Autoimmune Neuropsychiatric Disorders Associated with Streptococcal Infections</b>. NIMH describes both as conditions marked by a sudden and severe onset of OCD or restrictive eating, often accompanied by changes in mood, behaviour, sensory or motor function. PANDAS is considered a subtype of PANS associated with group A streptococcal infection. <a href="https://www.nimh.nih.gov/health/publications/pandas" target="_blank" rel="noopener">NIMH</a></p></div>
 
-      <div class="callout">
-        <span class="callout-label">Worth knowing</span>
-        <p>
-          PANS and PANDAS are considered rare, and researchers haven't pinned down
-          exact prevalence numbers yet. A child who has had strep before and also
-          has OCD or tics doesn't automatically have PANDAS — both are common on
-          their own. What matters is a strep infection occurring close in time to a
-          sudden onset or worsening of symptoms.
-        </p>
-      </div>
+  <div class="grid section">
+    <div class="card"><h3>⚡ Sudden change</h3><p>The defining clinical feature is a rapid, dramatic change rather than a gradual development of symptoms. Symptoms may reach high intensity within days.</p></div>
+    <div class="card"><h3>🧩 More than one symptom</h3><p>Alongside OCD or severe food restriction, children may develop anxiety, mood changes, irritability, tics, sensory or motor changes, sleep problems, urinary symptoms or a decline in school functioning.</p></div>
+    <div class="card"><h3>🔎 A diagnosis of exclusion</h3><p>There is currently no single laboratory test that confirms PANS or PANDAS. Clinicians need to consider and rule out other medical, neurological and psychiatric explanations.</p></div>
+  </div>
+
+  <div class="section two">
+    <div class="card"><h3>PANS</h3><p>PANS is a clinical syndrome. Its causes are not fully established. Proposed triggers include infections, immune-system disturbances and other factors, but no single cause explains every case.</p><ul class="checklist"><li>Sudden OCD or severe food restriction</li><li>At least two additional neuropsychiatric symptoms</li><li>Symptoms are not better explained by another condition</li></ul></div>
+    <div class="card"><h3>PANDAS</h3><p>PANDAS is a more specific clinical concept involving OCD and/or tics, childhood onset, an episodic course, a temporal relationship to group A strep infection, and neurological abnormalities.</p><ul class="checklist"><li>OCD and/or tics</li><li>Childhood onset</li><li>Acute or episodic worsening</li><li>Temporal association with group A strep</li></ul></div>
+  </div>
+
+  <div class="callout warning section"><b>Important for parents:</b> Having had strep throat and having tics or OCD does <em>not</em> by itself mean a child has PANDAS. Strep infections and tic/OCD symptoms are both relatively common in children, so the timing and clinical pattern matter. <a href="https://www.nimh.nih.gov/health/publications/pandas" target="_blank" rel="noopener">NIMH</a></div>
+
+  <div class="section"><h2>What might parents notice?</h2><div class="grid">
+    <div class="card"><h3>🧠 Neuropsychiatric</h3><p>OCD-like behaviours, intrusive thoughts, anxiety, separation anxiety, emotional changes, irritability or aggression.</p></div>
+    <div class="card"><h3>🍽️ Eating</h3><p>Sudden food refusal or markedly restricted eating can be part of the presenting picture.</p></div>
+    <div class="card"><h3>🖐️ Motor &amp; sensory</h3><p>Tics, unusual movements, changes in handwriting, sensory changes or motor difficulties may occur.</p></div>
+  </div></div>
+
+  <div class="section"><h2>What should I do if this sounds familiar?</h2><div class="flow"><div class="step"><div class="num">01 · Document</div><h4>Write down the timeline</h4><p>Record what changed, how quickly, and what happened before the change.</p></div><div class="step"><div class="num">02 · See a clinician</div><h4>Start with medical assessment</h4><p>Discuss the sudden change and ask whether other explanations need to be considered.</p></div><div class="step"><div class="num">03 · Assess symptoms</div><h4>Look at the whole child</h4><p>Mental health, neurological, infectious and developmental factors may all matter.</p></div><div class="step"><div class="num">04 · Support</div><h4>Treat what is present</h4><p>Symptom support and appropriate treatment can be considered while evaluation continues.</p></div></div></div>
+</section>
+
+<section id="physiology" class="page">
+  <div class="hero" style="padding-bottom:25px"><div><div class="eyebrow">Page 2 · Understanding the biology</div><h1>What may be happening in the brain and immune system?</h1><p>Research is investigating how infection, immune signalling, the blood–brain barrier, antibodies and brain circuits might interact. Some mechanisms are supported by experimental evidence; others remain hypotheses.</p></div><div class="hero-art"><div class="orb a"></div><div class="orb b"></div><div class="pulse"></div><div class="brain">🧬</div></div></div>
+  <div class="callout"><b>Evidence matters:</b> The 2025 AAP clinical report states that the cause of PANS is unknown, there are no disease-specific biomarkers, and evidence for pathogenic causes and treatment remains limited. The page below therefore labels proposed mechanisms rather than presenting them as settled facts. <a href="https://publications.aap.org/pediatrics/article/155/3/e2024070334/200384/Pediatric-Acute-Onset-Neuropsychiatric-Syndrome" target="_blank" rel="noopener">AAP Clinical Report</a></div>
+
+  <div class="section"><h2>A proposed pathway</h2><div class="mechanism">
+    <div class="mech"><span class="status proposed">Proposed</span><strong>1. Trigger or trigger-like event</strong><p>In PANDAS, the proposed trigger is group A streptococcal infection. In PANS, a range of infectious and non-infectious triggers has been investigated. Not every child has an identified trigger.</p></div>
+    <div class="mech"><span class="status proposed">Proposed</span><strong>2. Immune activation</strong><p>Researchers are investigating whether an abnormal or misdirected immune response may contribute to symptoms in a susceptible child.</p></div>
+    <div class="mech"><span class="status proposed">Under investigation</span><strong>3. Blood–brain barrier &amp; signalling</strong><p>Research is examining whether inflammatory signalling and changes in the blood–brain barrier could alter how immune mediators interact with the central nervous system.</p></div>
+    <div class="mech"><span class="status proposed">Under investigation</span><strong>4. Brain circuits</strong><p>The basal ganglia and related circuits are of particular interest because they participate in movement, habit formation, motivation and behaviour.</p></div>
+  </div></div>
+
+  <div class="section"><h2>What does the evidence say?</h2><div class="two"><div class="card"><h3>What is reasonably established</h3><ul class="checklist"><li>The presentation can be abrupt and severe.</li><li>PANS has no single confirmed cause or diagnostic biomarker.</li><li>PANDAS is defined around a temporal relationship with group A strep.</li><li>Other conditions must be considered in the assessment.</li><li>Children may benefit from multidisciplinary, family-centred care.</li></ul></div><div class="card"><h3>What remains uncertain</h3><ul class="checklist"><li>Exactly how immune processes cause symptoms in individual children.</li><li>Which children are biologically susceptible.</li><li>Which biomarkers could reliably confirm the diagnosis.</li><li>Which immune-directed treatments help which patients.</li><li>How best to prevent future episodes.</li></ul></div></div></div>
+
+  <div class="section"><h2>Management: a whole-child approach</h2><p class="lead">There is no single treatment plan that fits every child. The AAP recommends a cautious, evidence-informed approach within a medical home and multidisciplinary team. Management may address the child's symptoms, confirmed infections when present, and—only in selected severe cases—immune-related treatment under specialist care.</p>
+    <div class="timeline">
+      <div class="titem"><h4>1 · Evaluate the sudden change</h4><p>Take a detailed history, examine the child and consider alternative diagnoses. Testing should be guided by the clinical picture rather than by a universal “PANS panel.”</p></div>
+      <div class="titem"><h4>2 · Treat documented infection appropriately</h4><p>If group A strep infection is identified, appropriate antibiotic treatment may be indicated. Long-term antibiotic use for prevention remains an area where evidence is insufficient according to NIMH/AAP.</p></div>
+      <div class="titem"><h4>3 · Support neuropsychiatric symptoms</h4><p>Psychological and behavioural interventions can help with OCD, anxiety, tics, eating difficulties and family stress. Medication may be considered by an appropriately trained clinician when indicated.</p></div>
+      <div class="titem"><h4>4 · Consider specialist immune treatment only when appropriate</h4><p>IVIG and other immunomodulatory approaches have been studied, but they carry risks and the evidence remains limited. The AAP recommends specialist multidisciplinary assessment for severe cases before invasive immune therapies.</p></div>
     </div>
-  </section>
+  </div>
 
-  <!-- SYMPTOMS -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="small-label">What it looks like</span>
-        <h2>Signs and symptoms</h2>
-        <p class="measure" style="margin-top:16px;">
-          Symptoms tend to appear or worsen very quickly — often reaching full
-          intensity within days — and may come and go over time, sometimes flaring
-          again with a new infection.
-        </p>
-      </div>
-      <ul class="two-col-list">
-        <li>Sudden, severe onset of OCD symptoms</li>
-        <li>New or worsening motor and vocal tics</li>
-        <li>Refusing to eat or highly selective eating</li>
-        <li>Sudden separation anxiety</li>
-        <li>Irritability, aggression, or mood swings</li>
-        <li>Sadness, or laughing/crying that seems out of place</li>
-        <li>Changes in handwriting or other motor skills</li>
-        <li>Joint pain</li>
-        <li>Sudden bed-wetting or frequent daytime urination</li>
-        <li>Hyperactivity, inattention, or fidgeting</li>
-        <li>Trouble sleeping</li>
-        <li>A noticeable drop in school performance</li>
-      </ul>
+  <div class="callout warning section"><b>About “special tests”:</b> The AAP clinical report does not recommend routine use of tests such as the Cunningham panel to diagnose PANS/PANDAS because available evidence indicates poor specificity and results do not reliably confirm or exclude the condition.</div>
+
+  <div class="section"><h2>Research is moving forward</h2><p class="lead">Current research includes immune signalling, autoantibodies, microglial and endothelial responses, basal-ganglia biology, clinical trajectories and treatment studies. Parent education should keep pace with new evidence without presenting preliminary findings as established clinical facts.</p><div class="grid"><div class="card"><h3>🔬 Research updates</h3><p>The Autism Research Institute hosts research discussions covering diagnosis, disease pathways and treatment questions.</p><a href="https://autism.org/webinar/pans-pandas-research-updates/" target="_blank" rel="noopener">View research update →</a></div><div class="card"><h3>📚 Research archive</h3><p>PANDAS Network provides a research hub and links to recent clinical and scientific publications.</p><a href="https://pandasnetwork.org/research/" target="_blank" rel="noopener">Explore research →</a></div><div class="card"><h3>👩‍⚕️ Clinical guidance</h3><p>The AAP 2025 clinical report provides a current evidence review and cautious clinical framework for PANS.</p><a href="https://publications.aap.org/pediatrics/article/155/3/e2024070334/200384/Pediatric-Acute-Onset-Neuropsychiatric-Syndrome" target="_blank" rel="noopener">Read the AAP report →</a></div></div></div>
+
+  <div class="section"><h2>Sources used for this page</h2><div class="sources">
+    <div class="source"><div class="icon">🏛️</div><p><b>National Institute of Mental Health (NIMH)</b><a href="https://www.nimh.nih.gov/health/publications/pandas" target="_blank" rel="noopener">PANS and PANDAS: Questions and Answers</a></p></div>
+    <div class="source"><div class="icon">🩺</div><p><b>American Academy of Pediatrics · 2025</b><a href="https://publications.aap.org/pediatrics/article/155/3/e2024070334/200384/Pediatric-Acute-Onset-Neuropsychiatric-Syndrome" target="_blank" rel="noopener">PANS Clinical Report</a></p></div>
+    <div class="source"><div class="icon">📖</div><p><b>Zych et al. · 2024</b><a href="https://www.jpccr.eu/Current-knowledge-of-PANDAS-and-PANS-syndromes-in-paediatric-patients-etiology-diagnosis%2C193989%2C0%2C2.html" target="_blank" rel="noopener">Current knowledge of PANDAS and PANS syndromes in paediatric patients</a></p></div>
+    <div class="source"><div class="icon">🧪</div><p><b>Autism Research Institute</b><a href="https://autism.org/webinar/pans-pandas-research-updates/" target="_blank" rel="noopener">PANS/PANDAS – Research Updates</a></p></div>
+    <div class="source"><div class="icon">🧬</div><p><b>PANDAS Network</b><a href="https://pandasnetwork.org/research/" target="_blank" rel="noopener">Research hub</a></p></div>
+    <div class="source"><div class="icon">📰</div><p><b>Rheumatology Advisor</b><a href="https://www.rheumatologyadvisor.com/features/pandas-diagnosis-and-management-review/" target="_blank" rel="noopener">PANDAS diagnosis and management review</a></p></div>
+  </div></div>
+</section>
+
+<section id="group" class="page">
+  <div class="hero" style="padding-bottom:25px"><div><div class="eyebrow">Page 3 · Community</div><h1>You don't have to navigate the questions alone.</h1><p>Join the parent information group to receive educational resources, research updates and opportunities for supportive discussion. The group is designed for information-sharing—not diagnosis or individual treatment advice.</p></div><div class="hero-art"><div class="orb a"></div><div class="orb b"></div><div class="pulse"></div><div class="brain">🤝</div></div></div>
+  <div class="join">
+    <div class="joinbox"><h2>Join the parent group</h2><p style="color:var(--muted)">Complete this interest form. In a live version of the website, these details would be securely connected to your chosen email/group platform.</p>
+      <form id="joinForm">
+        <label for="name">Parent / caregiver name</label><input id="name" required placeholder="Your name">
+        <label for="email">Email address</label><input id="email" type="email" required placeholder="you@example.com">
+        <label for="country">Country</label><input id="country" placeholder="e.g. South Africa">
+        <label for="interest">What would you like to receive?</label><select id="interest"><option>General PANS/PANDAS education</option><option>Research updates</option><option>Parent support discussions</option><option>All of the above</option></select>
+        <label for="message">Anything you'd like us to know? <span style="font-weight:500;color:var(--muted)">(optional)</span></label><textarea id="message" placeholder="Please do not include detailed medical records here."></textarea>
+        <button class="button" type="submit">Request to join</button>
+        <div class="consent">By submitting, you are expressing interest in joining the group. A live implementation should include a privacy notice, consent wording and secure data handling appropriate to your jurisdiction.</div>
+        <div class="success" id="success">Thank you — your interest has been recorded in this preview. Connect this form to your secure mailing or community platform before launch.</div>
+      </form>
     </div>
-  </section>
+    <div><div class="card"><h3>What the group can offer</h3><ul class="checklist"><li>Plain-language education for parents</li><li>Links to reputable research and clinical resources</li><li>Space to share questions and experiences respectfully</li><li>Updates when important evidence changes</li><li>Practical guidance for preparing for healthcare appointments</li></ul></div><div class="callout warning"><b>Please remember:</b> A parent group cannot replace medical assessment. Seek urgent medical care when a child is acutely unwell, has altered consciousness, seizures, severe dehydration, suicidal thoughts, or another emergency.</div></div>
+  </div>
 
-  <!-- HOW IT DIFFERS FROM TYPICAL OCD -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="small-label">A key distinction</span>
-        <h2>How this differs from typical childhood OCD</h2>
-      </div>
-      <div class="measure">
-        <p>
-          Most children who develop OCD or tics do so gradually — symptoms build
-          over weeks, months, or years before they become noticeable. PANS and
-          PANDAS look different: symptoms appear abruptly, often reaching their
-          worst within a few days, and are then typically followed by a slow,
-          gradual improvement. That sudden, dramatic onset — rather than any single
-          symptom — is what first prompts a clinician to consider PANS or PANDAS.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="quote-block">
-    <div class="wrap">
-      <blockquote>
-        Diagnosis can be genuinely difficult, and there's real, honest debate
-        among specialists about where the boundaries of PANS and PANDAS lie.
-      </blockquote>
-      <cite>
-        See <a href="physiology.html">Physiology &amp; Management</a>
-        for how it's evaluated and treated, or
-        <a href="join.html">Join a Group</a> to connect with
-        other families.
-      </cite>
-    </div>
-  </section>
-
-  <!-- SOURCES -->
-  <section class="section" id="sources">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="small-label">Where this comes from</span>
-        <h2>Sources</h2>
-      </div>
-      <ul class="sources-list">
-        <li>
-          <a href="https://www.nimh.nih.gov/health/publications/pandas" target="_blank" rel="noopener">PANS and PANDAS: Questions and Answers</a>
-          <span class="src-meta">National Institute of Mental Health (NIMH), revised 2025 — definitions, symptoms, and diagnostic criteria</span>
-        </li>
-        <li>
-          <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022395625002912" target="_blank" rel="noopener">PANS and PANDAS – symptoms beyond OCD and tics: a systematic review</a>
-          <span class="src-meta">Łojek &amp; Rzeszutek, Journal of Psychiatric Research, Vol. 187 (2025)</span>
-        </li>
-        <li>
-          <a href="https://www.jpccr.eu/Current-knowledge-of-PANDAS-and-PANS-syndromes-in-paediatric-patients-etiology-diagnosis,193989,0,2.html" target="_blank" rel="noopener">Current knowledge of PANDAS and PANS syndromes in paediatric patients — etiology, diagnosis and therapies</a>
-          <span class="src-meta">Zych, Burdan, Ziomek, et al., Journal of Pre-Clinical and Clinical Research (2024)</span>
-        </li>
-        <li>
-          <a href="https://autism.org/webinar/pans-pandas-research-updates/" target="_blank" rel="noopener">PANS/PANDAS Research Updates (webinar)</a>
-          <span class="src-meta">autism.org</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
+  <div class="section two"><div class="card"><h3>Community principles</h3><ul class="checklist"><li>We separate evidence from personal experience.</li><li>We do not diagnose children in the group.</li><li>We do not pressure families into a particular treatment.</li><li>We respect different clinical opinions where evidence is evolving.</li><li>We protect children's and families' privacy.</li></ul></div><div class="card"><h3>Helpful starting resources</h3><p style="margin-bottom:12px;color:var(--muted)">For families who want to read more, these resources can be used as starting points.</p><p>• <a href="https://www.nimh.nih.gov/health/publications/pandas" target="_blank" rel="noopener">NIMH PANS/PANDAS Q&amp;A</a><br>• <a href="https://publications.aap.org/pediatrics/article/155/3/e2024070334/200384/Pediatric-Acute-Onset-Neuropsychiatric-Syndrome" target="_blank" rel="noopener">AAP Clinical Report</a><br>• <a href="https://autism.org/webinar/pans-pandas-research-updates/" target="_blank" rel="noopener">Autism Research Institute update</a><br>• <a href="https://pandasnetwork.org/research/" target="_blank" rel="noopener">PANDAS Network research</a></p></div></div>
+</section>
 </main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <p>&copy; <span id="year"></span> Stix: Paediatric Practice — Dr. Pieter Fourie. Not a substitute for individualized medical advice.</p>
-    <p><a href="https://www.stix.co.za/contact-us" target="_blank" rel="noopener">Contact us</a></p>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+<footer><div class="footerin"><b>PANS &amp; PANDAS Parent Information</b><p>This website is educational and is not a substitute for diagnosis, medical advice or individualized treatment. PANS/PANDAS is an evolving area of research. Information should be interpreted in partnership with qualified healthcare professionals. Source links are provided so parents can read the original material.</p><p>© 2026 · Parent education prototype</p></div></footer>
+</div>
+<script>
+const pages=[...document.querySelectorAll('.page')];
+const buttons=[...document.querySelectorAll('[data-page]')];
+function showPage(id){
+  const target=document.getElementById(id)||document.getElementById('home');
+  pages.forEach(p=>p.classList.toggle('active',p===target));
+  buttons.forEach(b=>b.classList.toggle('active',b.dataset.page===target.id));
+  history.replaceState(null,'','#'+target.id);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+buttons.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+const initial=location.hash.replace('#','');
+showPage(initial||'home');
+document.getElementById('joinForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('success').style.display='block';});
+</script>
 </body>
 </html>
