@@ -58,11 +58,15 @@ main{max-width:1180px;padding:34px 22px 70px}
 @media(max-width:850px){.home-grid,.notice-grid{grid-template-columns:1fr}.brain-frame{max-width:560px}.nav{align-items:flex-start;flex-direction:column}.navlinks{justify-content:flex-start}.intro-card{padding:30px}.biology-content{grid-template-columns:1fr}}
 @media(max-width:520px){main{padding:28px 16px 55px}.intro-card h1{font-size:3rem}.nav{padding:10px 16px}}
 </style>
+<style>
+.notice-section .section-heading span{background:#fff0f0;color:var(--red)}
+.notice-section .section-heading h2{color:var(--red)}
+</style>
 </head>
 <body>
 <div id="app">
 <header><nav class="nav" aria-label="Main navigation">
-  <div class="brand"><div class="logo"><img src="logo.png" alt="PANS &amp; PANDAS logo"></div><span>PANS &amp; PANDAS<br><small style="font-weight:600;color:#ffffffcc">Parent Information</small></span></div>
+  <div class="brand"><div class="logo"><img src="logo.png" alt="PANS &amp; PANDAS logo"></div><span>PANS &amp; PANDAS</span></div>
   <div class="navlinks">
     <button data-page="home">Home</button>
     <button data-page="physiology">Physiology &amp; Management</button>
