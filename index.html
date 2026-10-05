@@ -6,15 +6,15 @@
 <title>PANS & PANDAS — Parent Information</title>
 <style>
 :root{
-  --ink:#17324d;
-  --muted:#617487;
-  --bg:#f6f8f7;
+  --ink:#14243b;
+  --muted:#607087;
+  --bg:#f5f7fb;
   --surface:#ffffff;
-  --soft:#eaf4f1;
-  --soft2:#f1ecf8;
-  --accent:#3b7d78;
-  --accent2:#725b92;
-  --border:#dbe4e5;
+  --soft:#e8f8f5;
+  --soft2:#eeeafd;
+  --accent:#12a594;
+  --accent2:#7657d6;
+  --border:#dce3ef;
   --warning:#fff5df;
   --shadow:0 16px 42px rgba(23,50,77,.09);
 }
@@ -44,15 +44,30 @@ footer{border-top:1px solid var(--border);padding:25px 22px 50px;color:var(--mut
 @media(max-width:850px){.hero,.join,.two,.mechanism{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.sources{grid-template-columns:1fr}.hero-art{min-height:260px}.nav{align-items:flex-start;flex-direction:column}.navlinks{justify-content:flex-start}}
 @media(max-width:520px){main{padding:30px 16px 55px}.flow{grid-template-columns:1fr}.nav{padding:12px 16px}.hero h1{font-size:2.7rem}}
 </style>
+<style>
+:root{--blue:#0025cc;--red:#fc0000;--yellow:#ffde59;--red-light:#ff6b6b;--ink:#111827;--muted:#596579;--bg:#fffdf8;--surface:#fff;--border:#e7e3da;--shadow:0 18px 45px rgba(0,37,204,.12)}
+body{background:var(--bg);color:var(--ink)}#app{background:var(--bg)}
+header{background:var(--red-light);border-bottom:3px solid var(--red);box-shadow:0 8px 24px rgba(252,0,0,.14)}
+.nav{max-width:1180px;padding:12px 22px}.brand{color:#fff}.logo{width:58px;height:58px;border-radius:15px;background:#fff;display:grid;place-items:center;overflow:hidden;border:3px solid var(--blue);box-shadow:0 5px 0 var(--yellow)}.logo img{width:100%;height:100%;object-fit:contain}
+.navlinks{gap:7px}.navlinks button{color:#fff;padding:10px 14px;border-radius:12px}.navlinks button.active,.navlinks button:hover{background:#fff;color:var(--red)}.navlinks .community-button{background:var(--yellow);color:#111827;box-shadow:0 4px 0 rgba(0,0,0,.12)}.navlinks .community-button:hover{background:#ffe979;color:#111827}
+main{max-width:1180px;padding:34px 22px 70px}
+.home-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:stretch}.intro-card{background:#fff;border:3px solid var(--blue);border-radius:30px;padding:42px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow)}.intro-card .eyebrow{color:var(--red)}.intro-card h1{font-size:clamp(3rem,7vw,5.8rem);line-height:.92;letter-spacing:-.065em;color:var(--blue);margin:12px 0 24px}.intro-card p{font-size:1.08rem;color:var(--muted)}.mini-note{margin-top:15px;background:#fff7c7;border-left:6px solid var(--yellow);padding:14px 16px;border-radius:12px;font-weight:700}
+.brain-frame{position:relative;display:grid;place-items:center;aspect-ratio:1/1;width:100%;max-width:520px;margin:auto;border:10px solid var(--blue);border-radius:42px;background:#07162d;overflow:hidden;box-shadow:18px 18px 0 var(--yellow)}.brain-photo{width:100%;height:100%;object-fit:cover}.brain-frame:after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.18);border-radius:32px;pointer-events:none}
+.notice-section,.biology-section{margin-top:54px}.section-heading{display:flex;align-items:center;gap:14px;margin-bottom:18px}.section-heading span{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--yellow);font-weight:950;color:var(--blue)}.section-heading h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.045em;margin:0;color:var(--blue)}.notice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.notice-card{border-radius:24px;padding:28px;min-height:230px;border:3px solid var(--blue);background:#fff;box-shadow:0 10px 0 rgba(0,37,204,.07)}.notice-card h3{font-size:1.35rem;margin:5px 0 9px}.notice-card p{color:var(--muted);margin:0}.notice-icon{font-size:2.2rem}.red-card{border-color:var(--red)}.red-card h3{color:var(--red)}.yellow-card{border-color:#d1b200;background:#fffdf0}.yellow-card h3{color:#967900}.blue-card h3{color:var(--blue)}
+.biology-section{background:var(--blue);border-radius:30px;padding:34px;color:#fff;box-shadow:var(--shadow)}.biology-section .section-heading h2{color:#fff}.biology-content{display:grid;grid-template-columns:72px 1fr;gap:22px;align-items:start}.biology-mark{width:64px;height:64px;border-radius:18px;background:var(--yellow);color:var(--red);display:grid;place-items:center;font-size:3rem}.biology-content h3{font-size:1.5rem;margin:0 0 8px}.biology-content p{font-size:1.05rem;line-height:1.75;margin:0;color:#edf1ff;max-width:900px}
+@media(max-width:850px){.home-grid,.notice-grid{grid-template-columns:1fr}.brain-frame{max-width:560px}.nav{align-items:flex-start;flex-direction:column}.navlinks{justify-content:flex-start}.intro-card{padding:30px}.biology-content{grid-template-columns:1fr}}
+@media(max-width:520px){main{padding:28px 16px 55px}.intro-card h1{font-size:3rem}.nav{padding:10px 16px}}
+</style>
 </head>
 <body>
 <div id="app">
 <header><nav class="nav" aria-label="Main navigation">
-  <div class="brand"><div class="logo">✦</div><span>PANS &amp; PANDAS<br><small style="font-weight:600;color:#718392">Parent Information</small></span></div>
+  <div class="brand"><div class="logo"><img src="logo.png" alt="PANS &amp; PANDAS logo"></div><span>PANS &amp; PANDAS<br><small style="font-weight:600;color:#ffffffcc">Parent Information</small></span></div>
   <div class="navlinks">
-    <button data-page="home">What is it?</button>
+    <button data-page="home">Home</button>
     <button data-page="physiology">Physiology &amp; Management</button>
-    <button data-page="group">Join the Group</button>
+    <button data-page="contact">Contact us</button>
+    <button class="community-button" data-page="contact">Join the community</button>
   </div>
 </nav></header>
 <main>
@@ -127,7 +142,7 @@ footer{border-top:1px solid var(--border);padding:25px 22px 50px;color:var(--mut
   </div></div>
 </section>
 
-<section id="group" class="page">
+<section id="contact" class="page">
   <div class="hero" style="padding-bottom:25px"><div><div class="eyebrow">Page 3 · Community</div><h1>You don't have to navigate the questions alone.</h1><p>Join the parent information group to receive educational resources, research updates and opportunities for supportive discussion. The group is designed for information-sharing—not diagnosis or individual treatment advice.</p></div><div class="hero-art"><div class="orb a"></div><div class="orb b"></div><div class="pulse"></div><div class="brain">🤝</div></div></div>
   <div class="join">
     <div class="joinbox"><h2>Join the parent group</h2><p style="color:var(--muted)">Complete this interest form. In a live version of the website, these details would be securely connected to your chosen email/group platform.</p>
@@ -163,6 +178,32 @@ function showPage(id){
 buttons.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 const initial=location.hash.replace('#','');
 showPage(initial||'home');
+const home=document.getElementById('home');
+home.innerHTML=`
+  <div class="home-grid">
+    <div class="intro-card">
+      <div class="eyebrow">Parent-friendly information</div>
+      <h1>PANS &amp; PANDAS</h1>
+      <p><b>PANS</b> stands for <b>Pediatric Acute-Onset Neuropsychiatric Syndrome</b>. <b>PANDAS</b> stands for <b>Pediatric Autoimmune Neuropsychiatric Disorders Associated with Streptococcal Infections</b>.</p>
+      <p>Both describe patterns in which a child develops a sudden and significant change in neuropsychiatric symptoms. PANDAS is considered a subtype of PANS associated with group A streptococcal infection.</p>
+      <div class="mini-note">These terms describe a clinical presentation. There is currently no single laboratory test that confirms PANS or PANDAS.</div>
+    </div>
+    <div class="brain-frame"><img class="brain-photo" src="brain.jpg" alt="Scientific illustration of a human brain with glowing neural activity"></div>
+  </div>
+
+  <section class="notice-section">
+    <div class="section-heading"><span>01</span><h2>What might parents notice?</h2></div>
+    <div class="notice-grid">
+      <article class="notice-card blue-card"><div class="notice-icon">🧠</div><h3>Neuropsychiatric</h3><p>OCD-like behaviours, intrusive thoughts, anxiety, separation anxiety, emotional changes, irritability or aggression.</p></article>
+      <article class="notice-card red-card"><div class="notice-icon">🍽️</div><h3>Eating</h3><p>Sudden food refusal or markedly restricted eating can be part of the presenting picture.</p></article>
+      <article class="notice-card yellow-card"><div class="notice-icon">🖐️</div><h3>Motor &amp; sensory</h3><p>Tics, unusual movements, changes in handwriting, sensory changes or motor difficulties may occur.</p></article>
+    </div>
+  </section>
+
+  <section class="biology-section">
+    <div class="section-heading"><span>02</span><h2>Understanding the biology</h2></div>
+    <div class="biology-content"><div class="biology-mark">+</div><div><h3>What may be happening in the brain and immune system?</h3><p>Research is investigating how infection, immune signalling, the blood–brain barrier, antibodies and brain circuits might interact. Some mechanisms are supported by experimental evidence; others remain hypotheses.</p></div></div>
+  </section>`;
 document.getElementById('joinForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('success').style.display='block';});
 </script>
 </body>
