@@ -43,9 +43,6 @@ main{max-width:1160px;margin:auto;padding:48px 22px 70px}.page{display:none}.pag
 footer{border-top:1px solid var(--border);padding:25px 22px 50px;color:var(--muted);font-size:.82rem}.footerin{max-width:1160px;margin:auto}.footerin p{max-width:850px}
 @media(max-width:850px){.hero,.join,.two,.mechanism{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.sources{grid-template-columns:1fr}.hero-art{min-height:260px}.nav{align-items:flex-start;flex-direction:column}.navlinks{justify-content:flex-start}}
 @media(max-width:520px){main{padding:30px 16px 55px}.flow{grid-template-columns:1fr}.nav{padding:12px 16px}.hero h1{font-size:2.7rem}}
-
-.community-image{background:#fff !important;overflow:hidden;}
-.community-image img{width:100%;height:100%;min-height:340px;object-fit:cover;display:block;}
 </style>
 <style>
 :root{--blue:#0025cc;--red:#fc0000;--yellow:#ffde59;--red-light:#ff6b6b;--ink:#111827;--muted:#596579;--bg:#fffdf8;--surface:#fff;--border:#e7e3da;--shadow:0 18px 45px rgba(0,37,204,.12)}
@@ -67,12 +64,15 @@ main{max-width:1180px;padding:34px 22px 70px}
 </style>
 <style>
 .notice-card{text-align:center}
-.physiology-highlights .card:nth-child(1){background:#eef3ff;border-color:#b9c8ff;box-shadow:0 10px 0 rgba(0,37,204,.08)}
-.physiology-highlights .card:nth-child(1) h3{color:var(--blue)}
-.physiology-highlights .card:nth-child(2){background:#fff0f0;border-color:#ffb8b8;box-shadow:0 10px 0 rgba(252,0,0,.07)}
-.physiology-highlights .card:nth-child(2) h3{color:var(--red)}
-.physiology-highlights .card:nth-child(3){background:#fff9d8;border-color:#f0d85c;box-shadow:0 10px 0 rgba(255,222,89,.18)}
-.physiology-highlights .card:nth-child(3) h3{color:#8a7000}
+.physiology-highlights .card:nth-child(1){background:#0025cc;border-color:#0025cc;box-shadow:0 10px 0 rgba(0,37,204,.16);color:#fff}
+.physiology-highlights .card:nth-child(1) h3{color:#fff}
+.physiology-highlights .card:nth-child(1) p{color:#fff}
+.physiology-highlights .card:nth-child(2){background:#fc0000;border-color:#fc0000;box-shadow:0 10px 0 rgba(252,0,0,.14);color:#fff}
+.physiology-highlights .card:nth-child(2) h3{color:#fff}
+.physiology-highlights .card:nth-child(2) p{color:#fff}
+.physiology-highlights .card:nth-child(3){background:#ffde59;border-color:#ffde59;box-shadow:0 10px 0 rgba(255,222,89,.25);color:#202020}
+.physiology-highlights .card:nth-child(3) h3{color:#202020}
+.physiology-highlights .card:nth-child(3) p{color:#202020}
 .home-what{margin-top:46px;background:#fff;border:3px solid var(--yellow);border-radius:28px;padding:30px 34px;box-shadow:0 10px 0 rgba(255,222,89,.18)}
 .home-what h2{color:var(--blue);margin:0 0 12px;font-size:clamp(1.9rem,4vw,2.8rem)}
 .home-what p{color:var(--muted);font-size:1.08rem;max-width:1000px;margin:0}
@@ -179,7 +179,7 @@ main{max-width:1180px;padding:34px 22px 70px}
 </section>
 
 <section id="contact" class="page">
-  <div class="hero" style="padding-bottom:25px"><div><div class="eyebrow">Page 3 · Community</div><h1>You don't have to navigate the questions alone.</h1><p>Join the parent information group to receive educational resources, research updates and opportunities for supportive discussion. The group is designed for information-sharing—not diagnosis or individual treatment advice.</p></div><div class="hero-art community-image"><img src="parent-community.jpg" alt="Parents and caregivers sitting together in a support group"></div></div>
+  <div class="hero" style="padding-bottom:25px"><div><div class="eyebrow">Page 3 · Community</div><h1>You don't have to navigate the questions alone.</h1><p>Join the parent information group to receive educational resources, research updates and opportunities for supportive discussion. The group is designed for information-sharing—not diagnosis or individual treatment advice.</p></div><div class="hero-art"><div class="orb a"></div><div class="orb b"></div><div class="pulse"></div><div class="brain">🤝</div></div></div>
   <div class="join">
     <div class="joinbox"><h2>Join the parent group</h2><p style="color:var(--muted)">Complete this interest form. In a live version of the website, these details would be securely connected to your chosen email/group platform.</p>
       <form id="joinForm">
