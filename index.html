@@ -140,6 +140,24 @@ main{max-width:1180px;padding:34px 22px 70px}
 #physiology .source:nth-child(3n){border-left-color:var(--yellow)}
 #physiology .source b{color:var(--ink)}
 </style>
+<style>
+/* Page 1 (Home): section colours. 01 = red, 02 = blue, 03 = yellow. Number badge, heading and blocks share one colour per section. Scoped to #home. */
+#home .notice-section .section-heading span{background:var(--red);color:#fff}
+#home .notice-section .section-heading h2{color:var(--red)}
+#home .notice-section .notice-card,#home .notice-section .notice-card.blue-card,#home .notice-section .notice-card.red-card,#home .notice-section .notice-card.yellow-card{border-color:var(--red);background:#fff;box-shadow:0 10px 0 rgba(252,0,0,.10)}
+#home .notice-section .notice-card h3,#home .notice-section .notice-card.blue-card h3,#home .notice-section .notice-card.red-card h3,#home .notice-section .notice-card.yellow-card h3{color:var(--red)}
+#home .home-timeline .section-heading span{background:var(--blue);color:#fff}
+#home .home-timeline .section-heading h2{color:var(--blue)}
+#home .timeline-track:before{background:var(--blue)}
+#home .timeline-step{border-color:var(--blue)}
+#home .timeline-step .timeline-number{background:var(--blue);color:#fff}
+#home .biology-section{background:var(--yellow);color:var(--ink);box-shadow:0 10px 0 rgba(255,222,89,.35)}
+#home .biology-section .section-heading span{background:var(--yellow);color:var(--ink);border:3px solid var(--ink)}
+#home .biology-section .section-heading h2{color:var(--ink)}
+#home .biology-mark{background:#fff;color:var(--ink)}
+#home .biology-content h3{color:var(--ink)}
+#home .biology-content p{color:var(--ink)}
+</style>
 </head>
 <body>
 <div id="app">
