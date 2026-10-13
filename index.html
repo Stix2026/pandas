@@ -47,7 +47,7 @@ footer{border-top:1px solid var(--border);padding:25px 22px 50px;color:var(--mut
 <style>
 :root{--blue:#0025cc;--red:#fc0000;--yellow:#ffde59;--red-light:#ff6b6b;--ink:#111827;--muted:#596579;--bg:#fffdf8;--surface:#fff;--border:#e7e3da;--shadow:0 18px 45px rgba(0,37,204,.12)}
 body{background:var(--bg);color:var(--ink)}#app{background:var(--bg)}
-header{background:var(--red-light);border-bottom:3px solid var(--red);box-shadow:0 8px 24px rgba(252,0,0,.14)}
+header{background:var(--red);border-bottom:3px solid var(--red);box-shadow:0 8px 24px rgba(252,0,0,.14)}
 .nav{max-width:1180px;padding:12px 22px}.brand{color:#fff}.logo{width:58px;height:58px;border-radius:15px;background:#fff;display:grid;place-items:center;overflow:hidden;border:3px solid var(--blue);box-shadow:0 5px 0 var(--yellow)}.logo img{width:100%;height:100%;object-fit:contain}
 .navlinks{gap:7px}.navlinks button{color:#fff;padding:10px 14px;border-radius:12px}.navlinks button.active,.navlinks button:hover{background:#fff;color:var(--red)}.navlinks .community-button{background:var(--yellow);color:#111827;box-shadow:0 4px 0 rgba(0,0,0,.12)}.navlinks .community-button:hover{background:#ffe979;color:#111827}
 main{max-width:1180px;padding:34px 22px 70px}
@@ -187,6 +187,14 @@ main{max-width:1180px;padding:34px 22px 70px}
 #contact .section.two>.card:nth-child(2){border-color:var(--yellow);background:#fffdf0;box-shadow:0 10px 0 rgba(255,222,89,.25)}
 #contact .section.two>.card:nth-child(2) h3{color:var(--ink)}
 </style>
+<style>
+/* Footer: text on the left, logo on the right. */
+.footerin{display:flex;align-items:center;justify-content:space-between;gap:28px}
+.footer-text{flex:1;min-width:0}
+.footer-logo{flex:none;width:4cm;height:4cm;border-radius:24px;background:#fff;border:3px solid var(--blue);box-shadow:0 6px 0 var(--yellow);display:grid;place-items:center;overflow:hidden}
+.footer-logo img{width:100%;height:100%;object-fit:contain;display:block;transform:scale(1.45)}
+@media(max-width:520px){.footer-logo{width:96px;height:96px;border-radius:18px}}
+</style>
 </head>
 <body>
 <div id="app">
@@ -301,7 +309,7 @@ main{max-width:1180px;padding:34px 22px 70px}
   <div class="section two"><div class="card"><h3>Community principles</h3><ul class="checklist"><li>We separate evidence from personal experience.</li><li>We do not diagnose children in the group.</li><li>We do not pressure families into a particular treatment.</li><li>We respect different clinical opinions where evidence is evolving.</li><li>We protect children's and families' privacy.</li></ul></div><div class="card"><h3>Helpful starting resources</h3><p style="margin-bottom:12px;color:var(--muted)">For families who want to read more, these resources can be used as starting points.</p><p>• <a href="https://www.nimh.nih.gov/health/publications/pandas" target="_blank" rel="noopener">NIMH PANS/PANDAS Q&amp;A</a><br>• <a href="https://publications.aap.org/pediatrics/article/155/3/e2024070334/200384/Pediatric-Acute-Onset-Neuropsychiatric-Syndrome" target="_blank" rel="noopener">AAP Clinical Report</a><br>• <a href="https://autism.org/webinar/pans-pandas-research-updates/" target="_blank" rel="noopener">Autism Research Institute update</a><br>• <a href="https://pandasnetwork.org/research/" target="_blank" rel="noopener">PANDAS Network research</a></p></div></div>
 </section>
 </main>
-<footer><div class="footerin"><b>PANS &amp; PANDAS Parent Information</b><p>This website is educational and is not a substitute for diagnosis, medical advice or individualized treatment. PANS/PANDAS is an evolving area of research. Information should be interpreted in partnership with qualified healthcare professionals. Source links are provided so parents can read the original material.</p><p>© 2026 · Parent education prototype</p></div></footer>
+<footer><div class="footerin"><div class="footer-text"><b>PANS &amp; PANDAS Parent Information</b><p>This website is educational and is not a substitute for diagnosis, medical advice or individualized treatment. PANS/PANDAS is an evolving area of research. Information should be interpreted in partnership with qualified healthcare professionals. Source links are provided so parents can read the original material.</p><p>© 2026 · Parent education prototype</p></div><div class="footer-logo"><img src="logo.png" alt="PANS &amp; PANDAS logo"></div></div></footer>
 </div>
 <script>
 const pages=[...document.querySelectorAll('.page')];
