@@ -264,7 +264,7 @@ function showPage(id){
   const target=document.getElementById(id)||document.getElementById('home');
   pages.forEach(p=>p.classList.toggle('active',p===target));
   buttons.forEach(b=>b.classList.toggle('active',b.dataset.page===target.id));
-  history.replaceState(null,'','#'+target.id);
+  try{history.replaceState(null,'','#'+target.id);}catch(e){}
   window.scrollTo({top:0,behavior:'smooth'});
 }
 buttons.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
